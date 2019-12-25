@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RadioChalio</string>
+    <string-array name="tabs">
+        <item>Radio</item>
+        <item>Favorites</item>
+    </string-array>
+</resources>
