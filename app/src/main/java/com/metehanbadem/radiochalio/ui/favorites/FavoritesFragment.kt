@@ -1,4 +1,4 @@
-package com.metehanbadem.radiochalio.favorites
+package com.metehanbadem.radiochalio.ui.favorites
 
 import android.os.Bundle
 import android.view.LayoutInflater

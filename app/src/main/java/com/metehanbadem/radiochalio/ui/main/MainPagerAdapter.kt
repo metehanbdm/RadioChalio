@@ -1,13 +1,12 @@
-package com.metehanbadem.radiochalio.main
+package com.metehanbadem.radiochalio.ui.main
 
 import android.content.Context
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import com.metehanbadem.radiochalio.R
-import com.metehanbadem.radiochalio.favorites.FavoritesFragment
-import com.metehanbadem.radiochalio.radios.RadiosFragment
+import com.metehanbadem.radiochalio.ui.favorites.FavoritesFragment
+import com.metehanbadem.radiochalio.ui.radios.RadiosFragment
 import java.lang.IllegalStateException
 
 class MainPagerAdapter(context: Context,

@@ -1,4 +1,4 @@
-package com.metehanbadem.radiochalio.main
+package com.metehanbadem.radiochalio.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
