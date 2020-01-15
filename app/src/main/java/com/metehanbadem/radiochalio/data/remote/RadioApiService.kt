@@ -1,6 +1,5 @@
-package com.metehanbadem.radiochalio.data
+package com.metehanbadem.radiochalio.data.remote
 
-import com.metehanbadem.radiochalio.data.Radio
 import io.reactivex.Single
 import retrofit2.http.GET
 

@@ -7,15 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.metehanbadem.radiochalio.R
-import com.metehanbadem.radiochalio.data.RadioServiceProvider
+import com.metehanbadem.radiochalio.data.RadioDataSource
+import com.metehanbadem.radiochalio.data.remote.RadioServiceProvider
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 
 class RadiosFragment : Fragment() {
 
-    private val radioServiceProvider =
-        RadioServiceProvider()
+    val radioDataSource = RadioDataSource()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,25 +28,19 @@ class RadiosFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        val populerRadiosObservable = radioServiceProvider
-            .getRadioService()
-            .getPopularRadios()
+        val a = radioDataSource.fetchPopulerRadios()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(
-                { Log.v("Test", "Success: $it") },
-                { Log.v("Test", "Error: $it") })
+            .subscribe { resource ->
+                Log.v("Test", resource.status.toString())
+            }
 
-        val locationRadiosObservable = radioServiceProvider
-            .getRadioService()
-            .getLocationRadios()
+        val b = radioDataSource.fetchLocationRadios()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(
-                { Log.v("Test", "Success: $it") },
-                { Log.v("Test", "Error: $it") })
-
-
+            .subscribe { resource ->
+                Log.v("Test", resource.status.toString())
+            }
     }
 
     companion object {

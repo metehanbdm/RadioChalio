@@ -1,4 +1,4 @@
-package com.metehanbadem.radiochalio.data
+package com.metehanbadem.radiochalio.data.remote
 
 data class Stream (
 
